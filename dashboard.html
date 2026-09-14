@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - ProVideoAI</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard-styles.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-film"></i>
+            <h2>ProVideoAI</h2>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" onclick="showSection('home')">
+                <i class="fas fa-home"></i>
+                <span>الرئيسية</span>
+            </a>
+            <a href="#" class="nav-item" onclick="showSection('create')">
+                <i class="fas fa-plus-circle"></i>
+                <span>إنشاء فيديو</span>
+            </a>
+            <a href="#" class="nav-item" onclick="showSection('my-videos')">
+                <i class="fas fa-video"></i>
+                <span>فيديوهاتي</span>
+            </a>
+            <a href="#" class="nav-item" onclick="showSection('templates')">
+                <i class="fas fa-th"></i>
+                <span>القوالب</span>
+            </a>
+            <a href="#" class="nav-item" onclick="showSection('settings')">
+                <i class="fas fa-cog"></i>
+                <span>الإعدادات</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <img src="https://via.placeholder.com/40" alt="User">
+                <div>
+                    <p class="user-name">اسم المستخدم</p>
+                    <p class="user-plan">الباقة المجانية</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="ابحث عن فيديوهاتك...">
+            </div>
+            <div class="top-bar-actions">
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="help-btn">
+                    <i class="fas fa-question-circle"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content-area">
+
+            <!-- Home Section -->
+            <section id="home-section" class="section active">
+                <h1>مرحباً بك في ProVideoAI</h1>
+                
+                <div class="welcome-card">
+                    <h2>جاهز لإنشاء فيديو إعلاني احترافي؟</h2>
+                    <p>اختر من بين عشرات القوالب الاحترافية وابدأ الآن</p>
+                    <button class="btn btn-primary" onclick="showSection('create')">
+                        <i class="fas fa-play"></i> إنشاء فيديو جديد
+                    </button>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <i class="fas fa-video"></i>
+                        <div>
+                            <p class="stat-number">5</p>
+                            <p class="stat-label">فيديوهاتي</p>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <p class="stat-number">2:45</p>
+                            <p class="stat-label">إجمالي المدة</p>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-download"></i>
+                        <div>
+                            <p class="stat-number">12</p>
+                            <p class="stat-label">تحميلات</p>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-star"></i>
+                        <div>
+                            <p class="stat-number">4.8</p>
+                            <p class="stat-label">التقييم</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-videos">
+                    <h3>آخر فيديوهاتك</h3>
+                    <div class="videos-list">
+                        <div class="video-item">
+                            <img src="https://via.placeholder.com/150x85" alt="Video thumbnail">
+                            <div class="video-info">
+                                <h4>فيديو إعلاني للمنتج</h4>
+                                <p>تم الإنشاء: اليوم في 10:30</p>
+                            </div>
+                            <div class="video-actions">
+                                <button class="btn-icon"><i class="fas fa-play"></i></button>
+                                <button class="btn-icon"><i class="fas fa-download"></i></button>
+                                <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="video-item">
+                            <img src="https://via.placeholder.com/150x85" alt="Video thumbnail">
+                            <div class="video-info">
+                                <h4>عرض ترويجي موسمي</h4>
+                                <p>تم الإنشاء: أمس في 14:20</p>
+                            </div>
+                            <div class="video-actions">
+                                <button class="btn-icon"><i class="fas fa-play"></i></button>
+                                <button class="btn-icon"><i class="fas fa-download"></i></button>
+                                <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Create Section -->
+            <section id="create-section" class="section">
+                <h1>إنشاء فيديو إعلاني جديد</h1>
+                
+                <div class="create-container">
+                    <div class="create-sidebar">
+                        <h3>خطوات الإنشاء</h3>
+                        <div class="steps">
+                            <div class="step active">
+                                <span class="step-number">1</span>
+                                <span class="step-title">اختر القالب</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">2</span>
+                                <span class="step-title">أضف المحتوى</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">3</span>
+                                <span class="step-title">خصص التصميم</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">4</span>
+                                <span class="step-title">توليد الفيديو</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="create-content">
+                        <!-- Step 1: Choose Template -->
+                        <div id="step-1" class="create-step active">
+                            <h2>اختر القالب المناسب</h2>
+                            <div class="templates-grid">
+                                <div class="template-card" onclick="selectTemplate(1)">
+                                    <img src="https://via.placeholder.com/200x120" alt="Template 1">
+                                    <h4>فيديو تقديمي</h4>
+                                    <p>قالب احترافي لتقديم المنتجات</p>
+                                    <button class="btn btn-small">اختر</button>
+                                </div>
+                                <div class="template-card" onclick="selectTemplate(2)">
+                                    <img src="https://via.placeholder.com/200x120" alt="Template 2">
+                                    <h4>عرض ترويجي</h4>
+                                    <p>قالب حيوي وجذاب للعروض</p>
+                                    <button class="btn btn-small">اختر</button>
+                                </div>
+                                <div class="template-card" onclick="selectTemplate(3)">
+                                    <img src="https://via.placeholder.com/200x120" alt="Template 3">
+                                    <h4>شهادات العملاء</h4>
+                                    <p>قالب لعرض تقييمات العملاء</p>
+                                    <button class="btn btn-small">اختر</button>
+                                </div>
+                                <div class="template-card" onclick="selectTemplate(4)">
+                                    <img src="https://via.placeholder.com/200x120" alt="Template 4">
+                                    <h4>إعلان منتج</h4>
+                                    <p>قالب إعلاني قصير وفعّال</p>
+                                    <button class="btn btn-small">اختر</button>
+                                </div>
+                                <div class="template-card" onclick="selectTemplate(5)">
+                                    <img src="https://via.placeholder.com/200x120" alt="Template 5">
+                                    <h4>قصة نجاح</h4>
+                                    <p>قالب لسرد قصص النجاح</p>
+                                    <button class="btn btn-small">اختر</button>
+                                </div>
+                                <div class="template-card" onclick="selectTemplate(6)">
+                                    <img src="https://via.placeholder.com/200x120" alt="Template 6">
+                                    <h4>إعلان سريع</h4>
+                                    <p>قالب خفيف وسريع التحرير</p>
+                                    <button class="btn btn-small">اختر</button>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" onclick="nextStep(2)">التالي</button>
+                        </div>
+
+                        <!-- Step 2: Add Content -->
+                        <div id="step-2" class="create-step">
+                            <h2>أضف محتوى الفيديو</h2>
+                            <form class="content-form">
+                                <div class="form-group">
+                                    <label>عنوان الإعلان</label>
+                                    <input type="text" placeholder="مثال: عرض خاص على منتجاتنا" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>وصف الإعلان</label>
+                                    <textarea rows="4" placeholder="اكتب وصف الإعلان هنا..." required></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>الكلمات المفتاحية (اختياري)</label>
+                                    <input type="text" placeholder="مثال: منتج، عرض، خصم">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>مدة الفيديو</label>
+                                    <select required>
+                                        <option>15 ثانية</option>
+                                        <option>30 ثانية</option>
+                                        <option>45 ثانية</option>
+                                        <option>60 ثانية</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>صور الإعلان</label>
+                                    <div class="file-upload">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>اسحب الصور هنا أو انقر للتحميل</p>
+                                        <input type="file" multiple accept="image/*">
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="form-buttons">
+                                <button class="btn btn-secondary" onclick="previousStep(1)">الرجوع</button>
+                                <button class="btn btn-primary" onclick="nextStep(3)">التالي</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Customize Design -->
+                        <div id="step-3" class="create-step">
+                            <h2>خصص تصميم الفيديو</h2>
+                            <div class="customization-options">
+                                <div class="option-group">
+                                    <h4>الألوان</h4>
+                                    <div class="color-picker-group">
+                                        <label>اللون الأساسي</label>
+                                        <input type="color" value="#6366f1">
+                                    </div>
+                                    <div class="color-picker-group">
+                                        <label>اللون الثانوي</label>
+                                        <input type="color" value="#8b5cf6">
+                                    </div>
+                                </div>
+
+                                <div class="option-group">
+                                    <h4>الخط</h4>
+                                    <select>
+                                        <option>Cairo</option>
+                                        <option>Roboto</option>
+                                        <option>Tajawal</option>
+                                    </select>
+                                </div>
+
+                                <div class="option-group">
+                                    <h4>الموسيقى</h4>
+                                    <select>
+                                        <option>موسيقى حماسية</option>
+                                        <option>موسيقى هادئة</option>
+                                        <option>موسيقى حديثة</option>
+                                        <option>بدون موسيقى</option>
+                                    </select>
+                                </div>
+
+                                <div class="option-group">
+                                    <h4>المؤثرات الصوتية</h4>
+                                    <label class="checkbox">
+                                        <input type="checkbox" checked>
+                                        <span>إضافة صوت</span>
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="checkbox" checked>
+                                        <span>إضافة مؤثرات</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-buttons">
+                                <button class="btn btn-secondary" onclick="previousStep(2)">الرجوع</button>
+                                <button class="btn btn-primary" onclick="nextStep(4)">التالي</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Generate Video -->
+                        <div id="step-4" class="create-step">
+                            <h2>توليد الفيديو</h2>
+                            <div class="preview-box">
+                                <div class="preview-info">
+                                    <h3>ملخص الإعلان</h3>
+                                    <ul>
+                                        <li><strong>القالب:</strong> فيديو تقديمي</li>
+                                        <li><strong>المدة:</strong> 30 ثانية</li>
+                                        <li><strong>الجودة:</strong> Full HD (1080p)</li>
+                                        <li><strong>الموسيقى:</strong> موسيقى حماسية</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-large" onclick="generateVideo()">
+                                <i class="fas fa-magic"></i> توليد الفيديو الآن
+                            </button>
+                            <p class="info-text">سيستغرق التوليد حوالي 2-5 دقائق</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- My Videos Section -->
+            <section id="my-videos-section" class="section">
+                <h1>فيديوهاتي</h1>
+                <div class="filter-bar">
+                    <input type="text" placeholder="ابحث عن فيديو...">
+                    <select>
+                        <option>جميع الفيديوهات</option>
+                        <option>تم الانتهاء منها</option>
+                        <option>قيد المعالجة</option>
+                        <option>الفاشلة</option>
+                    </select>
+                </div>
+                <div class="videos-grid">
+                    <div class="video-card">
+                        <img src="https://via.placeholder.com/250x150" alt="Video">
+                        <div class="video-card-content">
+                            <h4>فيديو إعلاني للمنتج</h4>
+                            <p>30 ثانية • 1080p</p>
+                            <div class="video-status completed">✓ مكتمل</div>
+                        </div>
+                        <div class="video-card-actions">
+                            <button class="btn-icon" title="تشغيل"><i class="fas fa-play"></i></button>
+                            <button class="btn-icon" title="تحميل"><i class="fas fa-download"></i></button>
+                            <button class="btn-icon" title="حذف"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Templates Section -->
+            <section id="templates-section" class="section">
+                <h1>جميع القوالب</h1>
+                <div class="templates-grid">
+                    <div class="template-card">
+                        <img src="https://via.placeholder.com/200x120" alt="Template">
+                        <h4>فيديو تقديمي</h4>
+                        <p>قالب احترافي</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings-section" class="section">
+                <h1>الإعدادات</h1>
+                <div class="settings-panel">
+                    <div class="setting-group">
+                        <h3>إعدادات الحساب</h3>
+                        <label>البريد الإلكتروني: user@example.com</label>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Loading Modal -->
+    <div id="loading-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="spinner"></div>
+            <p>جاري توليد الفيديو...</p>
+            <p class="loading-text">قد يستغرق هذا من 2 إلى 5 دقائق</p>
+        </div>
+    </div>
+
+    <script src="dashboard-script.js"></script>
+</body>
+</html>
